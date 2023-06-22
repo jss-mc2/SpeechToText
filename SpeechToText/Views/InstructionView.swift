@@ -19,7 +19,7 @@ struct InstructionView: View {
     init(_ instruction: Instruction) {
         self.Instruction_ = instruction
 #if DEBUG
-        print("init", type(of: self))
+        print("\(type(of: self)) init")
 #endif
     }
     
@@ -67,7 +67,7 @@ struct InstructionView: View {
     private func updateElapsedTime(timeInterval: Double) {
         print("\(#function)")
         if let ElapsedTime_, let timeInterval = Instruction_.TimerTimeInterval_, ElapsedTime_ >= timeInterval {
-            print("ElapsedTime >= timeInterval \(#function)")
+            print("\(#function) ElapsedTime >= timeInterval")
             StopTimer()
             return
         }

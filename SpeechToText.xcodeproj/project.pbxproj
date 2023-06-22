@@ -16,6 +16,11 @@
 		964112A52A43AFB300774966 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112A42A43AFB300774966 /* PageView.swift */; };
 		964112A72A43B3F200774966 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112A62A43B3F100774966 /* InstructionView.swift */; };
 		964112AB2A43B61B00774966 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112AA2A43B61B00774966 /* Instruction.swift */; };
+		964112B22A43D20B00774966 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112B12A43D20B00774966 /* SpeechRecognizer.swift */; };
+		964112B72A43D61800774966 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112B62A43D61800774966 /* AudioVisualizer.swift */; };
+		964112F32A43E1D700774966 /* SpeechRecognizer+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */; };
+		964112F72A43FC9900774966 /* AVAudioSession+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */; };
+		964112F92A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,12 @@
 		964112A42A43AFB300774966 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		964112A62A43B3F100774966 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		964112AA2A43B61B00774966 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		964112B12A43D20B00774966 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		964112B32A43D31E00774966 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		964112B62A43D61800774966 /* AudioVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
+		964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizer+Error.swift"; sourceTree = "<group>"; };
+		964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Authorization.swift"; sourceTree = "<group>"; };
+		964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Authorization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +57,7 @@
 		964112842A43A4AC00774966 = {
 			isa = PBXGroup;
 			children = (
+				964112B32A43D31E00774966 /* README.md */,
 				9641128F2A43A4AC00774966 /* SpeechToText */,
 				9641128E2A43A4AC00774966 /* Products */,
 			);
@@ -62,6 +74,7 @@
 		9641128F2A43A4AC00774966 /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
+				964112B02A43D1DE00774966 /* SpeechRecognizer */,
 				964112A92A43B60D00774966 /* Models */,
 				964112A82A43B60500774966 /* Views */,
 				964112902A43A4AC00774966 /* AppDelegate.swift */,
@@ -80,6 +93,7 @@
 			children = (
 				964112A42A43AFB300774966 /* PageView.swift */,
 				964112A62A43B3F100774966 /* InstructionView.swift */,
+				964112B62A43D61800774966 /* AudioVisualizer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +104,17 @@
 				964112AA2A43B61B00774966 /* Instruction.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		964112B02A43D1DE00774966 /* SpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				964112B12A43D20B00774966 /* SpeechRecognizer.swift */,
+				964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */,
+				964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */,
+				964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */,
+			);
+			path = SpeechRecognizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,11 +188,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964112F32A43E1D700774966 /* SpeechRecognizer+Error.swift in Sources */,
+				964112F92A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift in Sources */,
+				964112B22A43D20B00774966 /* SpeechRecognizer.swift in Sources */,
 				964112AB2A43B61B00774966 /* Instruction.swift in Sources */,
 				964112952A43A4AC00774966 /* ViewController.swift in Sources */,
+				964112F72A43FC9900774966 /* AVAudioSession+Authorization.swift in Sources */,
 				964112A52A43AFB300774966 /* PageView.swift in Sources */,
 				964112912A43A4AC00774966 /* AppDelegate.swift in Sources */,
 				964112932A43A4AC00774966 /* SceneDelegate.swift in Sources */,
+				964112B72A43D61800774966 /* AudioVisualizer.swift in Sources */,
 				964112A72A43B3F200774966 /* InstructionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,11 +348,14 @@
 				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeechToText/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next\", \"Back\" to navigate and \"Set Timer\" to set timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,11 +379,14 @@
 				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeechToText/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next\", \"Back\" to navigate and \"Set Timer\" to set timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
