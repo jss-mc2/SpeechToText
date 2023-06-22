@@ -28,9 +28,9 @@ struct PageView<Page: View>: View {
     var body: some View {
         let swipeGesture = DragGesture()
             .onEnded { gesture in
-                if gesture.translation.width > 0 {
+                if gesture.translation.width < 0 {
                     NextPage()
-                } else if gesture.translation.width < 0 {
+                } else if gesture.translation.width > 0 {
                     PreviousPage()
                 }
             }
