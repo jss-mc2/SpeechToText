@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-extension Animation {
-    func repeatForever(while expression: Bool, autoreverses: Bool = true) -> Animation {
-        if expression {
-            return self.repeatForever(autoreverses: autoreverses)
-        } else {
-            return self
-        }
-    }
-}
-
 struct AudioVisualizer: View {
     @Binding var IsVisualizing_: Bool
     

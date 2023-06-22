@@ -24,6 +24,7 @@
 		964112FB2A4414E200774966 /* PageView+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112FA2A4414E200774966 /* PageView+Navigation.swift */; };
 		964112FD2A44163A00774966 /* PageView+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112FC2A44163A00774966 /* PageView+Timer.swift */; };
 		964113032A44267D00774966 /* SpeechRecognizer+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */; };
+		964113082A44491400774966 /* Animation+RepeatForever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964113072A44491400774966 /* Animation+RepeatForever.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		964112FA2A4414E200774966 /* PageView+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageView+Navigation.swift"; sourceTree = "<group>"; };
 		964112FC2A44163A00774966 /* PageView+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageView+Timer.swift"; sourceTree = "<group>"; };
 		964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizer+Mapping.swift"; sourceTree = "<group>"; };
+		964113072A44491400774966 /* Animation+RepeatForever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+RepeatForever.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		9641128F2A43A4AC00774966 /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
+				964113062A44490400774966 /* Utilities */,
 				964112B02A43D1DE00774966 /* SpeechRecognizer */,
 				964112A92A43B60D00774966 /* Models */,
 				964112A82A43B60500774966 /* Views */,
@@ -124,6 +127,14 @@
 				964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */,
 			);
 			path = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
+		964113062A44490400774966 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				964113072A44491400774966 /* Animation+RepeatForever.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				964112F92A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift in Sources */,
 				964112FD2A44163A00774966 /* PageView+Timer.swift in Sources */,
 				964112B22A43D20B00774966 /* SpeechRecognizer.swift in Sources */,
+				964113082A44491400774966 /* Animation+RepeatForever.swift in Sources */,
 				964112AB2A43B61B00774966 /* Instruction.swift in Sources */,
 				964112952A43A4AC00774966 /* ViewController.swift in Sources */,
 				964112FB2A4414E200774966 /* PageView+Navigation.swift in Sources */,

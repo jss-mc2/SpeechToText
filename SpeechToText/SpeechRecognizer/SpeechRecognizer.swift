@@ -173,34 +173,6 @@ class SpeechRecognizer: ObservableObject {
     
     var Transcribe: ((_ message: String) -> Void)?
     
-    // TODO: SOLID principle.
-    // comment: do override func
-//    func Transcribe(_ message: String) {
-//        print("\(#function) \(message)")
-//
-//        let words = message.lowercased().components(separatedBy: " ")
-//        let lastTwoWords = words.suffix(2)
-//        print("\(#function) last two words: \(lastTwoWords.description)")
-//
-//        // reverse guard clause.
-//        if let last = lastTwoWords.last, let action = Actions_[last] ?? Actions_[lastTwoWords.joined(separator: " ")]
-//        {
-//            print("\(#function) action")
-//            action()
-//        }
-//        // continue if Transcript words > 2
-//        else if (words.count > 2) {}
-//        // transcribe message: start
-//        // transcribe message: start timer
-//        else
-//        {
-//            Transcript_ = message
-//            return
-//        }
-//
-//        RestartTranscribing()
-//    }
-    
     // TODO: handle error
     func HandleError(_ error: Error) {
         var errorMessage = ""

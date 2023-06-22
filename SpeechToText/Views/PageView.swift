@@ -11,7 +11,14 @@ struct PageView<Page: View>: View {
     var Pages_: [Page]
     @State var CurrentPage_: Int = 0
     
+    @State var KeyWords_: [String] = []
     @ObservedObject var SpeechRecognizer_ = SpeechRecognizer()
+    
+    @State internal var startTime_: Date?
+    @State var DefaultCountDownDuration_: TimeInterval?
+    @State var CurrentCountDownDuration_: TimeInterval?
+    @State var ElapsedTime_: TimeInterval?
+    @State var Timer_: Timer?
     
     init(_ pages: [Page]) {
         self.Pages_ = pages
@@ -24,7 +31,7 @@ struct PageView<Page: View>: View {
                 if gesture.translation.width > 0 {
                     NextPage()
                 } else if gesture.translation.width < 0 {
-                    BackPage()
+                    PreviousPage()
                 }
             }
         VStack {
@@ -33,8 +40,18 @@ struct PageView<Page: View>: View {
                     NextPage()
                 }
                 .gesture(swipeGesture)
-            AudioVisualizer($SpeechRecognizer_.IsTranscribing_)
-            Text("\(SpeechRecognizer_.Transcript_)")
+            if let CurrentCountDownDuration_ {
+                Text("Timer \(CurrentCountDownDuration_, specifier: "%.fs")")
+                    .onTapGesture {
+                        ToggleTimer()
+                    }
+            }
+            if let ElapsedTime_ {
+                Text("Elapsed Time \(ElapsedTime_, specifier: "%.fs")")
+            }
+            if KeyWords_.count > 0 {
+                Text(KeyWords_.description)
+            }
             Text("Speech Recognizer \(SpeechRecognizer_.IsTranscribing_ ? "ON" : "OFF")")
                 .onTapGesture {
                     toggleTranscribing()
