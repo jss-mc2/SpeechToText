@@ -9,17 +9,17 @@ import Foundation
 
 extension SpeechRecognizer {
     enum RecognizerError: Error {
-        case nilRecognizer
-        case notAuthorizedToRecognize
-        case notPermittedToRecord
-        case recognizerIsUnavailable
+        case NIL_RECOGNIZER
+        case NOT_AUTHORIZED_TO_RECOGNIZE
+        case NOT_PERMITTED_TO_RECORD
+        case RECOGNIZER_IS_UNAVAILABLE
         
         var message: String {
             switch self {
-            case .nilRecognizer: return "Can't initialize speech recognizer"
-            case .notAuthorizedToRecognize: return "Not authorized to recognize speech"
-            case .notPermittedToRecord: return "Not permitted to record audio"
-            case .recognizerIsUnavailable: return "Recognizer is unavailable"
+            case .NIL_RECOGNIZER: return "Can't initialize speech recognizer"
+            case .NOT_AUTHORIZED_TO_RECOGNIZE: return "Not authorized to recognize speech"
+            case .NOT_PERMITTED_TO_RECORD: return "Not permitted to record audio"
+            case .RECOGNIZER_IS_UNAVAILABLE: return "Recognizer is unavailable"
             }
         }
     }

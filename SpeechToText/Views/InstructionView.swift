@@ -12,7 +12,7 @@ struct InstructionView: View {
     var Instruction_: Instruction
     
     // TODO: refactor
-    @State private var startTime_ = Date()
+    @State private var startTime_: Date?
     @State var ElapsedTime_: Double?
     @State var Timer_: Timer?
     
@@ -71,7 +71,9 @@ struct InstructionView: View {
             StopTimer()
             return
         }
-        ElapsedTime_ = Date().timeIntervalSince(startTime_)
+        if let startTime_ {
+            ElapsedTime_ = Date().timeIntervalSince(startTime_)
+        }
     }
 }
 

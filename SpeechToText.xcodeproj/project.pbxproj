@@ -21,6 +21,9 @@
 		964112F32A43E1D700774966 /* SpeechRecognizer+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */; };
 		964112F72A43FC9900774966 /* AVAudioSession+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */; };
 		964112F92A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */; };
+		964112FB2A4414E200774966 /* PageView+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112FA2A4414E200774966 /* PageView+Navigation.swift */; };
+		964112FD2A44163A00774966 /* PageView+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964112FC2A44163A00774966 /* PageView+Timer.swift */; };
+		964113032A44267D00774966 /* SpeechRecognizer+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizer+Error.swift"; sourceTree = "<group>"; };
 		964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Authorization.swift"; sourceTree = "<group>"; };
 		964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Authorization.swift"; sourceTree = "<group>"; };
+		964112FA2A4414E200774966 /* PageView+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageView+Navigation.swift"; sourceTree = "<group>"; };
+		964112FC2A44163A00774966 /* PageView+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageView+Timer.swift"; sourceTree = "<group>"; };
+		964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizer+Mapping.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				964112A42A43AFB300774966 /* PageView.swift */,
+				964112FA2A4414E200774966 /* PageView+Navigation.swift */,
+				964112FC2A44163A00774966 /* PageView+Timer.swift */,
 				964112A62A43B3F100774966 /* InstructionView.swift */,
 				964112B62A43D61800774966 /* AudioVisualizer.swift */,
 			);
@@ -113,6 +121,7 @@
 				964112F22A43E1D700774966 /* SpeechRecognizer+Error.swift */,
 				964112F62A43FC9900774966 /* AVAudioSession+Authorization.swift */,
 				964112F82A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift */,
+				964113022A44267D00774966 /* SpeechRecognizer+Mapping.swift */,
 			);
 			path = SpeechRecognizer;
 			sourceTree = "<group>";
@@ -190,14 +199,17 @@
 			files = (
 				964112F32A43E1D700774966 /* SpeechRecognizer+Error.swift in Sources */,
 				964112F92A43FCC200774966 /* SFSpeechRecognizer+Authorization.swift in Sources */,
+				964112FD2A44163A00774966 /* PageView+Timer.swift in Sources */,
 				964112B22A43D20B00774966 /* SpeechRecognizer.swift in Sources */,
 				964112AB2A43B61B00774966 /* Instruction.swift in Sources */,
 				964112952A43A4AC00774966 /* ViewController.swift in Sources */,
+				964112FB2A4414E200774966 /* PageView+Navigation.swift in Sources */,
 				964112F72A43FC9900774966 /* AVAudioSession+Authorization.swift in Sources */,
 				964112A52A43AFB300774966 /* PageView.swift in Sources */,
 				964112912A43A4AC00774966 /* AppDelegate.swift in Sources */,
 				964112932A43A4AC00774966 /* SceneDelegate.swift in Sources */,
 				964112B72A43D61800774966 /* AudioVisualizer.swift in Sources */,
+				964113032A44267D00774966 /* SpeechRecognizer+Mapping.swift in Sources */,
 				964112A72A43B3F200774966 /* InstructionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

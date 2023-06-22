@@ -23,13 +23,10 @@ class SpeechRecognizer: ObservableObject {
             IsTranscribing_ = false
         }
     }
-    private let recognizer_: SFSpeechRecognizer?
+    private var recognizer_: SFSpeechRecognizer?
     
     // SFSpeechRecognizer call recognitionHandler multiple times to get best transcription.
     private var debouncer_: DispatchWorkItem?
-    
-    // "next": nextAction(), "back": backAction(), "start timer": startTimerAction()
-    var Actions_: [String: () -> Void] = [:]
     
     @Published var IsTranscribing_: Bool = false
     @Published var Transcript_ = ""
@@ -38,26 +35,25 @@ class SpeechRecognizer: ObservableObject {
      Initializes a new speech recognizer. If this is the first time you've used the class, it
      requests access to the speech recognizer and the microphone.
      */
-    init() {
+    func Init() {
         recognizer_ = SFSpeechRecognizer()
         guard recognizer_ != nil else {
-            HandleError(RecognizerError.nilRecognizer)
+            HandleError(RecognizerError.NIL_RECOGNIZER)
             return
         }
         
         Task {
             do {
                 guard await SFSpeechRecognizer.HasAuthorizationToRecognize() else {
-                    throw RecognizerError.notAuthorizedToRecognize
+                    throw RecognizerError.NOT_AUTHORIZED_TO_RECOGNIZE
                 }
                 guard await AVAudioSession.sharedInstance().HasPermissionToRecord() else {
-                    throw RecognizerError.notPermittedToRecord
+                    throw RecognizerError.NOT_PERMITTED_TO_RECORD
                 }
             } catch {
                 HandleError(error)
             }
         }
-        
     }
     
     func StartTranscribing() {
@@ -82,7 +78,7 @@ class SpeechRecognizer: ObservableObject {
         print("\(#function)")
         
         guard let recognizer_, recognizer_.isAvailable else {
-            self.HandleError(RecognizerError.recognizerIsUnavailable)
+            self.HandleError(RecognizerError.RECOGNIZER_IS_UNAVAILABLE)
             return
         }
         
@@ -130,7 +126,9 @@ class SpeechRecognizer: ObservableObject {
         return (audioEngine, request)
     }
 
-    private func recognitionHandler(audioEngine: AVAudioEngine, result: SFSpeechRecognitionResult?, error: Error?) {
+    private func recognitionHandler(
+        audioEngine: AVAudioEngine, result: SFSpeechRecognitionResult?, error: Error?
+    ) {
         print("\(#function)")
         
         // code 216 if user stopTranscribing()
@@ -160,9 +158,11 @@ class SpeechRecognizer: ObservableObject {
             
             let debounceTime = 0.5 // 0.5s
             
-            let debouncer = DispatchWorkItem { [weak self] in
+            let debouncer = DispatchWorkItem {
                 print("\(#function) debouncing")
-                self?.Transcribe(result.bestTranscription.formattedString)
+                if let Transcribe = self.Transcribe {
+                    Transcribe(result.bestTranscription.formattedString)
+                }
             }
             
             debouncer_ = debouncer
@@ -171,33 +171,35 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    var Transcribe: ((_ message: String) -> Void)?
+    
     // TODO: SOLID principle.
     // comment: do override func
-    func Transcribe(_ message: String) {
-        print("\(#function) \(message)")
-        
-        let words = message.lowercased().components(separatedBy: " ")
-        let lastTwoWords = words.suffix(2)
-        print("\(#function) last two words: \(lastTwoWords.description)")
-        
-        // reverse guard clause.
-        if let last = lastTwoWords.last, let action = Actions_[last] ?? Actions_[lastTwoWords.joined(separator: " ")]
-        {
-            print("\(#function) action")
-            action()
-        }
-        // continue if Transcript words > 2
-        else if (words.count > 2) {}
-        // transcribe message: start
-        // transcribe message: start timer
-        else
-        {
-            Transcript_ = message
-            return
-        }
-        
-        RestartTranscribing()
-    }
+//    func Transcribe(_ message: String) {
+//        print("\(#function) \(message)")
+//
+//        let words = message.lowercased().components(separatedBy: " ")
+//        let lastTwoWords = words.suffix(2)
+//        print("\(#function) last two words: \(lastTwoWords.description)")
+//
+//        // reverse guard clause.
+//        if let last = lastTwoWords.last, let action = Actions_[last] ?? Actions_[lastTwoWords.joined(separator: " ")]
+//        {
+//            print("\(#function) action")
+//            action()
+//        }
+//        // continue if Transcript words > 2
+//        else if (words.count > 2) {}
+//        // transcribe message: start
+//        // transcribe message: start timer
+//        else
+//        {
+//            Transcript_ = message
+//            return
+//        }
+//
+//        RestartTranscribing()
+//    }
     
     // TODO: handle error
     func HandleError(_ error: Error) {

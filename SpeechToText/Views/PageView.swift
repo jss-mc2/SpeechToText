@@ -37,43 +37,9 @@ struct PageView<Page: View>: View {
             Text("\(SpeechRecognizer_.Transcript_)")
             Text("Speech Recognizer \(SpeechRecognizer_.IsTranscribing_ ? "ON" : "OFF")")
                 .onTapGesture {
-                    if !SpeechRecognizer_.IsTranscribing_ {
-                        SpeechRecognizer_.Actions_["next"] = NextPage
-                        SpeechRecognizer_.Actions_["back"] = BackPage
-                        SpeechRecognizer_.Actions_["set timer"] = SetTimer
-                        SpeechRecognizer_.StartTranscribing()
-                    } else {
-                        SpeechRecognizer_.StopTranscribing()
-                        SpeechRecognizer_.Actions_ = [:]
-                    }
+                    toggleTranscribing()
                 }
         }.navigationBarBackButtonHidden(true)
-    }
-    
-    func NextPage() {
-        if CurrentPage_ + 1 == Pages_.count {
-#if DEBUG
-            print("\(#function) end of page", type(of: self))
-#endif
-        } else {
-            CurrentPage_ += 1
-        }
-    }
-    
-    func BackPage() {
-        if CurrentPage_ == 0 {
-#if DEBUG
-            print("\(#function) beginning of page", type(of: self))
-#endif
-        } else {
-            CurrentPage_ -= 1
-        }
-    }
-    
-    func SetTimer() {
-        #if DEBUG
-        print("\(#function)")
-        #endif
     }
 }
 
