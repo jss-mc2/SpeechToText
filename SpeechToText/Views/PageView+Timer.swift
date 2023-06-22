@@ -70,6 +70,7 @@ extension PageView {
         print("\(#function)")
         if let ElapsedTime_, ElapsedTime_ >= countDownDuration {
             print("\(#function) ElapsedTime >= timeInterval")
+            StopTimer()
             StartAlarm()
             return
         }
